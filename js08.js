@@ -89,7 +89,7 @@ function playDrawPoker() {
       standButton.disabled = true;        // Turn off the Stand Button  
 
       statusBox.textContnent = myHand.getHandValue();
-      bankBox.value = pokerGame.payBet(statusBox.textContent);
+      bankBox.value = pokerGame.payBet(statusBox.textContent); //please coomit
    });
    
    
