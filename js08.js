@@ -51,6 +51,14 @@ function playDrawPoker() {
 
          for (let i = 0; i < cardImages.length; i++){
             cardImages[i].src = myHand.cards[i].cardImage();
+
+            cardImages[i].onclick = function(){
+               if (this.src.includes("cardback.png")){
+                  this.src = myHand.cards[i].cardImage();
+               } else{
+                  this.src = "cardback.png";
+               }
+            }
          }
          console.log(myDeck, myHand);
       }else{
@@ -67,7 +75,9 @@ function playDrawPoker() {
       standButton.disabled = true;        // Turn off the Stand Button
       
 
+      statusBox.textContnent = myHand.getHandValue();
 
+      bankBox.value = pokerGame.payBet(statusBox.textContent);
    });
    
     
@@ -78,7 +88,8 @@ function playDrawPoker() {
       drawButton.disabled = true;         // Turn off the Draw button
       standButton.disabled = true;        // Turn off the Stand Button  
 
-    
+      statusBox.textContnent = myHand.getHandValue();
+      bankBox.value = pokerGame.payBet(statusBox.textContent);
    });
    
    
